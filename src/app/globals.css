@@ -4,8 +4,8 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -15,6 +15,52 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
+/* For screens up to 768px wide (or adjust as needed) */
+@media (max-width: 768px) {
+  .custom-grid {
+      margin-left: 0;   /* Set left margin to zero */
+      margin-right: 0;  /* Set right margin to zero */
+  }
+}
+
+
+
+
+table {
+  max-height: 400px;
+}
+
+.table-container {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.table-container .tremor-Table-root {
+  overflow: initial !important;
+}
+
+table, table th, table td {
+  box-sizing: border-box;
+}
+
+
+
+
+
+table thead th {
+  position: sticky;
+  top: 0;  /* Adjusted to 0 */
+  background-color: #111827;
+  z-index: 3;
+}
+
+@media (max-width: 768px) { /* Adjust the breakpoint as needed */
+  .table-container th:not(:first-child),
+  .table-container td:not(:first-child) {
+      display: none; /* Hide all columns except the first one on mobile */
+  }
+}
+
 
 body {
   color: rgb(var(--foreground-rgb));
