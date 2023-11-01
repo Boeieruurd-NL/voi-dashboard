@@ -7,8 +7,7 @@ export async function fetchInitialData(): Promise<number> {
 
 export async function fetchDataForLastRound(lastRound: number) {
     const response = await fetch(`https://testnet-api.voi.nodly.io/v2/status/wait-for-block-after/${lastRound}`);
-    const data = await response.json();
-    return data;
+    return await response.json();
 }
 
 export const transactionsInLastRound = async (lastRound: number) => {
